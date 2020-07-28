@@ -1,0 +1,22 @@
+{
+  "name": "password-gen",
+  "version": "1.0.0",
+  "description": "password generator",
+  "main": "app.js.js",
+  "scripts": {
+    "dev": " npm run clean && parcel index.html --out-dir development",
+    "clean": "rimraf ./development && rimraf -rf ./.cache && rimraf ./production",
+    "build": "npm run clean && parcel build index.html --out-dir production"
+  },
+  "keywords": [],
+  "author": "Charles Loges IV",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "autoprefixer": "^9.8.5",
+    "node-sass": "^4.14.1",
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.2"
+  }
+}
