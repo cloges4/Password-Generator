@@ -1,0 +1,50 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+}
+
+.strength-message-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.character-choice-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.letter-flex-container,
+.numsym-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.uppercase,
+.lowercase,
+.numbers,
+.symbols {
+  display: flex;
+  margin: 5px 10px;
+}
