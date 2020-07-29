@@ -1,0 +1,30 @@
+.btn {
+  background: #fff;
+  border: 2px solid $border-color;
+  color: $button-text-color;
+}
+
+.btn:hover {
+  border-color: $accent-color;
+}
+// refresh btn
+
+.icon-tabler-refresh {
+  stroke: $button-text-color;
+}
+
+.icon-tabler-refresh:hover {
+  stroke: $accent-color;
+}
+
+//copy btn
+
+.copy-password {
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.copy-password:hover {
+  color: $accent-color;
+}
