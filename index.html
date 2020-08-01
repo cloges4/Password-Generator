@@ -33,11 +33,11 @@
         <span class="strength-message">Strong password</span>
       </div>
         <div class="password-container">
-          <p class="password">
+          <p id="password" class="password">
             95fDY5zMdNNnJ2WqpNX#s9nj@mSYwmuaD$qkrjwekl;rjwe;lk
           </p>
           <div class="btn-container">
-            <button class="btn generate-password" type="button">
+            <button id="generate" class="btn generate-password" type="button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-refresh"
@@ -55,12 +55,12 @@
                 <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 5v-5h-5" />
               </svg>
             </button>
-            <button class="btn copy-password" type="button">Copy</button>
+            <button id="clipboard" class="btn copy-password" type="button">Copy</button>
           </div>
         </div>
     
         <div class="range-slider">
-          <input class="range-slider-range" type="range" value="16" min="0" max="100">
+          <input id="slider-length" class="range-slider-range" type="range" value="16" min="0" max="100">
           <span class="range-slider-value">Length: 47</span>
         </div>
       <div class="character-choice-container">
