@@ -1,9 +1,14 @@
-.container {
+body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  width: 750px;
+  max-width: 100%;
 }
 
 header {
