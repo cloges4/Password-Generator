@@ -2,6 +2,9 @@
   background: #fff;
   border: 2px solid $border-color;
   color: $button-text-color;
+  padding: 5px 8px;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -19,12 +22,14 @@
 
 //copy btn
 
-.copy-password {
+.copy-password,
+.generate-password {
   font-size: 1.3rem;
   letter-spacing: 3px;
   font-weight: 600;
 }
 
-.copy-password:hover {
+.copy-password:hover,
+.generate-password:hover {
   color: $accent-color;
 }

@@ -28,10 +28,10 @@ header {
   flex-wrap: wrap;
 }
 
-btn-container {
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .character-choice-container {
