@@ -10,6 +10,7 @@ const numbersElement = document.getElementById('numbers');
 const symbolsElement = document.getElementById('symbols');
 const generateElement = document.getElementById('generate');
 const clipboardElement = document.getElementById('clipboard');
+const copyMessage = document.getElementById('copy-message');
 
 // Generate event listener
 
@@ -25,6 +26,14 @@ generateElement.addEventListener('click', () => {
 
 // copy to clipboard
 
+function hideMessage() {
+  copyMessage.classList.remove('show-message');
+}
+
+function showMessage() {
+  copyMessage.classList.add('show-message');
+  setTimeout(hideMessage, 1500);
+}
 clipboardElement.addEventListener('click', () => {
   const textarea = document.createElement('textarea');
   const password = passwordElement.innerText;
@@ -37,7 +46,7 @@ clipboardElement.addEventListener('click', () => {
   textarea.select();
   document.execCommand('copy');
   textarea.remove();
-  alert('Password copied to clickboard.');
+  clipboardElement.addEventListener('click', showMessage);
 });
 
 // Generate password

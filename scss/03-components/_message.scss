@@ -1,0 +1,19 @@
+.copy-message {
+  background-color: $accent-color;
+  color: $secondary-text-color;
+  opacity: 0.75;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  padding: 7.5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.show-message {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
