@@ -59,14 +59,6 @@ const UpdateRangeValue = function () {
 
 lengthElement.addEventListener('input', UpdateRangeValue);
 
-const rangeValue = function () {
-  const newValue = elem.value;
-  const target = document.querySelector('.value');
-  target.innerHTML = newValue;
-};
-
-elem.addEventListener('input', rangeValue);
-
 // Generate password
 
 function generatePassword(lower, upper, number, symbol, length) {
