@@ -59,10 +59,6 @@ const UpdateRangeValue = function () {
 
 lengthElement.addEventListener('input', UpdateRangeValue);
 
-// other
-
-// const elem = document.querySelector('input[type="range"]');
-
 const rangeValue = function () {
   const newValue = elem.value;
   const target = document.querySelector('.value');
