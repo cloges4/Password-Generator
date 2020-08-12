@@ -44,7 +44,7 @@ header {
 .letter-flex-container,
 .numsym-flex-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -52,6 +52,7 @@ header {
 .lowercase,
 .numbers,
 .symbols {
-  display: flex;
+  // display: flex;
   margin: 5px 10px;
+  width: 120px;
 }
