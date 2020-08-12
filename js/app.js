@@ -49,6 +49,28 @@ clipboardElement.addEventListener('click', () => {
   clipboardElement.addEventListener('click', showMessage);
 });
 
+// Range update
+
+const UpdateRangeValue = function () {
+  const updatedValue = lengthElement.value;
+  const rangeValue = document.querySelector('#range-value');
+  rangeValue.innerText = updatedValue;
+};
+
+lengthElement.addEventListener('input', UpdateRangeValue);
+
+// other
+
+// const elem = document.querySelector('input[type="range"]');
+
+const rangeValue = function () {
+  const newValue = elem.value;
+  const target = document.querySelector('.value');
+  target.innerHTML = newValue;
+};
+
+elem.addEventListener('input', rangeValue);
+
 // Generate password
 
 function generatePassword(lower, upper, number, symbol, length) {
