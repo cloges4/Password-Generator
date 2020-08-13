@@ -1,0 +1,12 @@
+footer a {
+  letter-spacing: 3px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: $accent-color;
+  width: 220px;
+  padding-top: 1.5rem;
+}
+
+footer a:hover {
+  color: $accent-color-opacity;
+}

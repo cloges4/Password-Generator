@@ -56,3 +56,12 @@ header {
   margin: 5px 10px;
   width: 120px;
 }
+
+footer {
+  margin-top: 2.5rem;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
