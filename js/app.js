@@ -11,6 +11,8 @@ const symbolsElement = document.getElementById('symbols');
 const generateElement = document.getElementById('generate');
 const clipboardElement = document.getElementById('clipboard');
 const copyMessage = document.getElementById('copy-message');
+const strengthIcon = document.getElementById('strength-icon');
+const strengthMessage = document.getElementById('strength-message');
 
 // Generate event listener
 
@@ -48,6 +50,8 @@ clipboardElement.addEventListener('click', () => {
   textarea.remove();
   clipboardElement.addEventListener('click', showMessage);
 });
+
+// strength message
 
 // Range update
 
