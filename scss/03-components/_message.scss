@@ -8,11 +8,11 @@
   position: absolute;
   top: 0;
   right: 15px;
-  opacity: 0;
-  transition: opacity 0.5s;
+  // opacity: 0;
+  // transition: opacity 0.5s;
+  display: none;
 }
 
 .show-message {
-  opacity: 1;
-  transition: opacity 0.5s;
+  display: block;
 }
