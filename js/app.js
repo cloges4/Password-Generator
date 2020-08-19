@@ -12,6 +12,31 @@ const copyMessage = document.querySelector('#copy-message');
 const strengthIcon = document.querySelector('#strength-icon');
 const strengthMessage = document.querySelector('#strength-message');
 
+// Generate password
+
+function generatePassword(lower, upper, number, symbol, length) {
+  let generatedPassword = '';
+
+  const typesCount = lower + upper + number + symbol;
+
+  const typesArray = [{ lower }, { upper }, { number }, { symbol }].filter((item) => Object.values(item)[0]);
+
+  if (typesCount === 0) {
+    return '';
+  }
+
+  for (let i = 0; i < length; i += typesCount) {
+    typesArray.forEach((type) => {
+      const funcName = Object.keys(type)[0];
+
+      generatedPassword += randomFunc[funcName]();
+    });
+  }
+  const finalPassword = generatedPassword.slice(0, length);
+
+  return finalPassword;
+}
+
 // Generate event listener
 
 generate.addEventListener('click', () => {
@@ -45,7 +70,6 @@ clipboard.addEventListener('click', () => {
   textarea.select();
   document.execCommand('copy');
   textarea.remove();
-  //   clipboardElement.addEventListener('click', showMessage);
 });
 
 // strength message
@@ -59,31 +83,6 @@ const UpdateRangeValue = function () {
 };
 
 lengthElement.addEventListener('input', UpdateRangeValue);
-
-// Generate password
-
-function generatePassword(lower, upper, number, symbol, length) {
-  let generatedPassword = '';
-
-  const typesCount = lower + upper + number + symbol;
-
-  const typesArray = [{ lower }, { upper }, { number }, { symbol }].filter((item) => Object.values(item)[0]);
-
-  if (typesCount === 0) {
-    return '';
-  }
-
-  for (let i = 0; i < length; i += typesCount) {
-    typesArray.forEach((type) => {
-      const funcName = Object.keys(type)[0];
-
-      generatedPassword += randomFunc[funcName]();
-    });
-  }
-  const finalPassword = generatedPassword.slice(0, length);
-
-  return finalPassword;
-}
 
 // function generators
 
