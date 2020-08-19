@@ -1,3 +1,5 @@
+import '../scss/app.scss';
+
 // DOM element
 
 const password = document.querySelector('#password');
@@ -63,6 +65,9 @@ window.addEventListener('load', () => {
   const hasSymbol = symbolsElement.checked;
 
   password.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+  password.classList.add('strong');
+  strengthIcon.src = '';
+  strengthMessage.innerText = 'Strong Password';
 });
 
 // copy to clipboard
