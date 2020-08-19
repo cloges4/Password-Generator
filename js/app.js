@@ -38,37 +38,33 @@ function generatePassword(lower, upper, number, symbol, length) {
   return finalPassword;
 }
 
-// Generate event listener
 // strength message
-
-generate.addEventListener('click', () => {
+function passwordStrength() {
   const length = +lengthElement.value;
   const hasLower = lowercaseElement.checked;
   const hasUpper = uppercaseElement.checked;
   const hasNumber = numbersElement.checked;
   const hasSymbol = symbolsElement.checked;
-
-  // if (hasUpper === true) {
-  //   console.log('hello');
-  // } else {
-  //   console.log('Nope');
-  // }
   password.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
-});
+}
+
+password.classList.add('strong');
+// strengthIcon.src = '';
+// strengthMessage.innerText = 'Strong Password';
+
+// if (hasUpper === true) {
+//   console.log('hello');
+// } else {
+//   console.log('Nope');
+// }
+
+// button click event listener
+
+generate.addEventListener('click', passwordStrength);
 
 // Page Load Event
-window.addEventListener('load', () => {
-  const length = +lengthElement.value;
-  const hasLower = lowercaseElement.checked;
-  const hasUpper = uppercaseElement.checked;
-  const hasNumber = numbersElement.checked;
-  const hasSymbol = symbolsElement.checked;
 
-  password.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
-  password.classList.add('strong');
-  strengthIcon.src = '';
-  strengthMessage.innerText = 'Strong Password';
-});
+window.addEventListener('load', passwordStrength);
 
 // copy to clipboard
 
