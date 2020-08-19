@@ -11,7 +11,6 @@ const clipboard = document.querySelector('#clipboard');
 const copyMessage = document.querySelector('#copy-message');
 const strengthIcon = document.querySelector('#strength-icon');
 const strengthMessage = document.querySelector('#strength-message');
-
 // Generate password
 
 function generatePassword(lower, upper, number, symbol, length) {
@@ -38,8 +37,25 @@ function generatePassword(lower, upper, number, symbol, length) {
 }
 
 // Generate event listener
+// strength message
 
 generate.addEventListener('click', () => {
+  const length = +lengthElement.value;
+  const hasLower = lowercaseElement.checked;
+  const hasUpper = uppercaseElement.checked;
+  const hasNumber = numbersElement.checked;
+  const hasSymbol = symbolsElement.checked;
+
+  // if (hasUpper === true) {
+  //   console.log('hello');
+  // } else {
+  //   console.log('Nope');
+  // }
+  password.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+});
+
+// Page Load Event
+window.addEventListener('load', () => {
   const length = +lengthElement.value;
   const hasLower = lowercaseElement.checked;
   const hasUpper = uppercaseElement.checked;
@@ -72,15 +88,13 @@ clipboard.addEventListener('click', () => {
   textarea.remove();
 });
 
-// strength message
-
 // Range update
 
-const UpdateRangeValue = function () {
+function UpdateRangeValue() {
   const updatedValue = lengthElement.value;
   const rangeValue = document.querySelector('#range-value');
   rangeValue.innerText = updatedValue;
-};
+}
 
 lengthElement.addEventListener('input', UpdateRangeValue);
 
