@@ -1,29 +1,27 @@
-import '../scss/app.scss';
-
 // DOM element
 
-const passwordElement = document.getElementById('password');
-const lengthElement = document.getElementById('slider-length');
-const uppercaseElement = document.getElementById('uppercase');
-const lowercaseElement = document.getElementById('lowercase');
-const numbersElement = document.getElementById('numbers');
-const symbolsElement = document.getElementById('symbols');
-const generateElement = document.getElementById('generate');
-const clipboardElement = document.getElementById('clipboard');
-const copyMessage = document.getElementById('copy-message');
-const strengthIcon = document.getElementById('strength-icon');
-const strengthMessage = document.getElementById('strength-message');
+const password = document.querySelector('#password');
+const lengthElement = document.querySelector('#slider-length');
+const uppercaseElement = document.querySelector('#uppercase');
+const lowercaseElement = document.querySelector('#lowercase');
+const numbersElement = document.querySelector('#numbers');
+const symbolsElement = document.querySelector('#symbols');
+const generate = document.querySelector('#generate');
+const clipboard = document.querySelector('#clipboard');
+const copyMessage = document.querySelector('#copy-message');
+const strengthIcon = document.querySelector('#strength-icon');
+const strengthMessage = document.querySelector('#strength-message');
 
 // Generate event listener
 
-generateElement.addEventListener('click', () => {
+generate.addEventListener('click', () => {
   const length = +lengthElement.value;
   const hasLower = lowercaseElement.checked;
   const hasUpper = uppercaseElement.checked;
   const hasNumber = numbersElement.checked;
   const hasSymbol = symbolsElement.checked;
 
-  passwordElement.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+  password.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 });
 
 // copy to clipboard
@@ -36,19 +34,18 @@ function showMessage() {
   copyMessage.classList.add('show-message');
   setTimeout(hideMessage, 1500);
 }
-clipboardElement.addEventListener('click', () => {
+clipboard.addEventListener('click', () => {
   const textarea = document.createElement('textarea');
-  const password = passwordElement.innerText;
-
-  if (!password) {
+  showMessage();
+  if (!password.innerText) {
     return;
   }
-  textarea.value = password;
+  textarea.value = password.innerText;
   document.body.appendChild(textarea);
   textarea.select();
   document.execCommand('copy');
   textarea.remove();
-  clipboardElement.addEventListener('click', showMessage);
+  //   clipboardElement.addEventListener('click', showMessage);
 });
 
 // strength message
