@@ -2,11 +2,11 @@
   "name": "password-gen",
   "version": "1.0.0",
   "description": "password generator",
-  "main": "app.js.js",
+  "main": "app.js",
   "scripts": {
     "dev": " npm run clean && parcel index.html --out-dir development",
     "clean": "rimraf ./development && rimraf -rf ./.cache && rimraf ./production",
-    "build": "npm run clean && parcel build index.html --out-dir production"
+    "build": "npm run clean && parcel build *.html --out-dir production --public-url ./"
   },
   "keywords": [],
   "author": "Charles Loges IV",
