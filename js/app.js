@@ -38,6 +38,10 @@ function generatePassword(lower, upper, number, symbol, length) {
   return finalPassword;
 }
 
+function clearPasswordClass() {
+  password.classList.remove('strong', 'fair', 'weak');
+}
+
 // strength message
 function passwordStrength() {
   const length = +lengthElement.value;
@@ -45,18 +49,37 @@ function passwordStrength() {
   const hasUpper = uppercaseElement.checked;
   const hasNumber = numbersElement.checked;
   const hasSymbol = symbolsElement.checked;
+
   password.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+
+  const toggle = [hasLower, hasUpper, hasNumber, hasSymbol];
+  let toggleValue = 0;
+  const strongPassword = 'Strong Password';
+  const fairPassword = 'Fair Password';
+  const weakPassword = 'Weak Password';
+
+  for (let i = 0; i < toggle.length; i += 1) {
+    if (toggle[i] === true) {
+      toggleValue += 1;
+    }
+  }
+
+  clearPasswordClass();
+
+  if (toggleValue >= 3 && length >= 10) {
+    password.classList.add('strong');
+    strengthMessage.innerText = strongPassword;
+    strengthIcon.src = require('../icons/strong.svg');
+  } else if (toggleValue >= 3 && length < 10 && length >= 7) {
+    password.classList.add('fair');
+    strengthMessage.innerText = fairPassword;
+    strengthIcon.src = require('../icons/fair.svg');
+  } else {
+    password.classList.add('weak');
+    strengthMessage.innerText = weakPassword;
+    strengthIcon.src = require('../icons/weak.svg');
+  }
 }
-
-password.classList.add('strong');
-// strengthIcon.src = '';
-// strengthMessage.innerText = 'Strong Password';
-
-// if (hasUpper === true) {
-//   console.log('hello');
-// } else {
-//   console.log('Nope');
-// }
 
 // button click event listener
 
