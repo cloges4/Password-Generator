@@ -3,14 +3,17 @@
   border: 2px solid $border-color;
   border-radius: 5px;
   color: $button-text-color;
+  outline-color: $accent-color;
   padding: 5px 8px;
   margin: 10px;
   cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
   border-color: $accent-color;
 }
+
 // refresh btn
 
 .icon-tabler-refresh {
