@@ -1,4 +1,4 @@
-# Project Title
+# Password Generator
 
 This is a password generator build using HTML, Sass, vanilla js, and parceljs.
 
