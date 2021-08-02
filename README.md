@@ -59,7 +59,7 @@ Feel free to submit pull requests.
 
 ## Authors
 
-- **Charles Loges IV** - _Initial work_ - [GitHub profile](https://github.com/cloges4)
+- **Charles Loges IV**  - [GitHub profile](https://github.com/cloges4)
 
 ## License
 
