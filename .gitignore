@@ -1,8 +1,6 @@
 
 .vscode
-development
-production
-support
-.cache
+dist
+.parcel-cache
 node_modules
 
