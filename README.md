@@ -19,7 +19,7 @@ npm install
 3. To get a development server up and running
 
 ```
-npm run dev
+npm run start
 ```
 
 4. To get production built version
@@ -43,7 +43,7 @@ This will install everything needed.
 Type
 
 ```
-npm run dev
+npm run start
 ```
 
 will get you a development server
