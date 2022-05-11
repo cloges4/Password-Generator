@@ -20,6 +20,7 @@
   "homepage": "https://github.com/cloges4/Password-Generator#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.5.0",
+    "@parcel/transformer-webmanifest": "^2.5.0",
     "parcel": "^2.5.0"
   }
 }
