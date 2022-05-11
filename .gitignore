@@ -3,4 +3,5 @@
 dist
 .parcel-cache
 node_modules
-
+src/scss/**/*.css
+src/scss/**/*.css.map
