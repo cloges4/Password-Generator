@@ -81,10 +81,17 @@ function passwordStrength() {
   }
 }
 
-// button click event listener
+// Button click event listeners
 
 generate.addEventListener('click', passwordStrength);
 
+// Regenerate password on input value changes
+
+uppercaseElement.addEventListener('click', passwordStrength);
+lowercaseElement.addEventListener('click', passwordStrength);
+numbersElement.addEventListener('click', passwordStrength);
+symbolsElement.addEventListener('click', passwordStrength);
+lengthElement.addEventListener('input', passwordStrength);
 // Page Load Event
 
 window.addEventListener('load', passwordStrength);
