@@ -65,6 +65,8 @@ const passwordStrength = () => {
 
   clearPasswordClass();
 
+   // Strength Message 
+
   if (!(toggleValue >= 3 && length >= 12 || toggleValue === 2 && length >= 25)) if (toggleValue >= 3 && length <= 11 && length >= 7 || toggleValue === 2 && length >= 20 && length <= 24) {
     password.classList.add('fair');
     strengthMessage.innerText = fairPassword;
@@ -115,7 +117,8 @@ clipboard.addEventListener('click', () => {
   textarea.value = password.innerText;
   document.body.appendChild(textarea);
   textarea.select();
-  document.execCommand('copy');
+  navigator.clipboard.writeText(password.innerText);
+  // document.execCommand('copy');
   textarea.remove();
 });
 
