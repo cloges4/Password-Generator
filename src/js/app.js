@@ -13,9 +13,10 @@ const clipboard = document.querySelector('#clipboard');
 const copyMessage = document.querySelector('#copy-message');
 const strengthIcon = document.querySelector('#strength-icon');
 const strengthMessage = document.querySelector('#strength-message');
+
 // Generate password
 
-function generatePassword(lower, upper, number, symbol, length) {
+const generatePassword = (lower, upper, number, symbol, length) => {
   let generatedPassword = '';
 
   const typesCount = lower + upper + number + symbol;
@@ -33,17 +34,15 @@ function generatePassword(lower, upper, number, symbol, length) {
       generatedPassword += randomFunc[funcName]();
     });
   }
-  const finalPassword = generatedPassword.slice(0, length);
+  return generatedPassword.slice(0, length);
+};
 
-  return finalPassword;
-}
-
-function clearPasswordClass() {
+const clearPasswordClass = () => {
   password.classList.remove('strong', 'fair', 'weak');
-}
+};
 
 // strength message
-function passwordStrength() {
+const passwordStrength = () => {
   const length = +lengthElement.value;
   const hasLower = lowercaseElement.checked;
   const hasUpper = uppercaseElement.checked;
@@ -58,19 +57,15 @@ function passwordStrength() {
   const fairPassword = 'Fair Password';
   const weakPassword = 'Weak Password';
 
-  for (let i = 0; i < toggle.length; i += 1) {
-    if (toggle[i] === true) {
+  for (const element of toggle) {
+    if (element === true) {
       toggleValue += 1;
     }
   }
 
   clearPasswordClass();
 
-  if (toggleValue >= 3 && length >= 12 || toggleValue === 2 && length >= 25) {
-    password.classList.add('strong');
-    strengthMessage.innerText = strongPassword;
-    strengthIcon.src = require('../icons/strong.svg');
-  } else if (toggleValue >= 3 && length <= 11 && length >= 7 || toggleValue === 2 && length >= 20 && length <= 24) {
+  if (!(toggleValue >= 3 && length >= 12 || toggleValue === 2 && length >= 25)) if (toggleValue >= 3 && length <= 11 && length >= 7 || toggleValue === 2 && length >= 20 && length <= 24) {
     password.classList.add('fair');
     strengthMessage.innerText = fairPassword;
     strengthIcon.src = require('../icons/fair.svg');
@@ -78,8 +73,12 @@ function passwordStrength() {
     password.classList.add('weak');
     strengthMessage.innerText = weakPassword;
     strengthIcon.src = require('../icons/weak.svg');
+  } else {
+    password.classList.add('strong');
+    strengthMessage.innerText = strongPassword;
+    strengthIcon.src = require('../icons/strong.svg');
   }
-}
+};
 
 // Button click event listeners
 
@@ -98,14 +97,15 @@ window.addEventListener('load', passwordStrength);
 
 // copy to clipboard
 
-function hideMessage() {
+const hideMessage = () => {
   copyMessage.classList.remove('show-message');
-}
+};
 
-function showMessage() {
+const showMessage = () => {
   copyMessage.classList.add('show-message');
   setTimeout(hideMessage, 1500);
-}
+};
+
 clipboard.addEventListener('click', () => {
   const textarea = document.createElement('textarea');
   showMessage();
@@ -121,32 +121,32 @@ clipboard.addEventListener('click', () => {
 
 // Range update
 
-function UpdateRangeValue() {
+const UpdateRangeValue = () => {
   const updatedValue = lengthElement.value;
   const rangeValue = document.querySelector('#range-value');
   rangeValue.innerText = updatedValue;
-}
+};
 
 lengthElement.addEventListener('input', UpdateRangeValue);
 
 // function generators
 
-function getRandomLower() {
+const getRandomLower = () => {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
+};
 
-function getRandomUpper() {
+const getRandomUpper = () => {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
+};
 
-function getRandomNumber() {
+const getRandomNumber = () => {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
+};
 
-function getRandomSymbol() {
+const getRandomSymbol = () => {
   const symbols = '!@#$%^&*(){}<>?';
   return symbols[Math.floor(Math.random() * symbols.length)];
-}
+};
 
 const randomFunc = {
   lower: getRandomLower,
