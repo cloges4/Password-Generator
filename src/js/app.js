@@ -66,11 +66,11 @@ function passwordStrength() {
 
   clearPasswordClass();
 
-  if (toggleValue >= 3 && length >= 10) {
+  if (toggleValue >= 3 && length >= 12 || toggleValue === 2 && length >= 25) {
     password.classList.add('strong');
     strengthMessage.innerText = strongPassword;
     strengthIcon.src = require('../icons/strong.svg');
-  } else if (toggleValue >= 3 && length < 10 && length >= 7) {
+  } else if (toggleValue >= 3 && length <= 11 && length >= 7 || toggleValue === 2 && length >= 20 && length <= 24) {
     password.classList.add('fair');
     strengthMessage.innerText = fairPassword;
     strengthIcon.src = require('../icons/fair.svg');
